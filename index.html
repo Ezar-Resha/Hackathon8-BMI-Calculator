@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BMI Calculator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,46 +12,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="content-left">
-            <h3>Kalkulator BMI</h3>
-            <form action="">
-                <h6>Gender</h6>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                </select>
-                <h6>Weight</h6>
-                <input class="form-control form-control-sm" type="number" aria-label=".form-control-sm example">
-                <h6>Height</h6>
-                <input class="form-control form-control-sm" type="number" aria-label=".form-control-sm example">
-                <div class="form-check">
-                    <h6>Activity</h6>
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">Often workout</label> <br>
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">Rarely workout</label> <br>
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">Never workout</label>
-                </div>
-            </form>
-            <button type="button" class="btn btn-warning">Start Counting</button>
-        </div>
-        <div class="content-right">
-            <p>TIPS & TRICKS</p>
-            <h3>Fatten The Body</h3>
-            <p class="p">
-                1. Eat more frequently. When you're underweight, you may feel full faster. ...<br>
-                2. Choose nutrient-rich foods. ...<br>
-                3. Try smoothies and shakes. ...<br>
-                4. Watch when you drink. ...<br>
-                5. Make every bite count. ...<br>
-                6. Top it off. ...<br>
-                7. Have an occasional treat. ...<br>
-                8. Exercise.
-            </p>
-            <div class="count">
-                <div class="trans"></div>
+    <div class="container"> <!-- ini box utama -->
+        <div class="main"> <!-- ini lokasi applikasi-->
+            <div class="head"> <!-- navigation bar applikasi-->
+               <ul>
+                    <li> BMI  </li>
+                    <li> Calorie </li>
+                    <li> Body Fat </li>
+                    <li> information </li>
+               </ul>
+            </div>
+            <div class="form"> <!-- ini form yang akan diisi-->
+                <form action="">
+                    <h6>Gender</h6>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <h6>Weight</h6>
+                    <input class="form-control form-control-sm" type="number" aria-label=".form-control-sm example">
+                    <h6>Height</h6>
+                    <input class="form-control form-control-sm" type="number" aria-label=".form-control-sm example">
+                    <h6>Activity level :</h6>
+                        <!-- jadiin drop down-->
+                        <select class="form-select-activity-level" for="activityLevel"> Choose your activity level: 
+                            <option value="lowLevel"> Jarang berolahraga </option>
+                            <option value="midLevel"> Kadang berolahraga </option>
+                            <option value="highLevel"> Sering berolahraga </option>
+                        </select>
+                </form>
+            </div>
+            <div class="buttons">
+                <button type="button" name="calculate" class="calculateButton"> <!-- function --> Calculate your BMI </button> 
+                <button type="button" name="reset" class="calculateButton"> <!-- function remove--> reset </button> 
+            </div>
+            <div class="output">
+                <p class="outputContent"> ini adalah output yang akan keluar nanti setelah tombol button di click.</p>
             </div>
         </div>
     </div>

@@ -1,66 +1,71 @@
-body{
+*{
     margin: 0;
     padding: 0;
     font-family: 'Rubik', Arial, sans-serif;
-    overflow: hidden;
+    box-sizing: border-box;
+}
+.body{
+    background-color: #1b1b1b;
 }
 .container{
-    width: 100%;
-    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
-.container .content-left{
-    float: left;
-    box-sizing: border-box;
+
+.main {
+        max-width: 1080px;
+        background: #fff;
+        width: 720px;
+        height: 540px;
+        
+    }
+
+.main .head{
+    background-color: #1b1b1b;
 }
-.container h3{
-    margin: 50px 100px;
-    font-family: 'Orelega One', cursive;;
+
+.main .head ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+    color:white;
 }
-form h6{
-    margin-top: 10px;
-    margin-bottom: 5px;
+.main .form{
+    background-color: red;
 }
-.form-check{
-    margin-top: 20px;
+
+.main .buttons{
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
 }
-.form-check h6{
-    margin-bottom: 10px;
+
+.calculateButton{
+    padding: 10px 20px;
+    margin: 10px 20px;
 }
-.form-check input, label{
-    margin-top: 10px;
+.main .output{
+    background-color: white;
 }
-.content-left button{
-    margin: 50px 120px;
-    color: aliceblue;
+
+.form{
+    padding: 20px 20px;
 }
-.container .content-right{
-    box-sizing: border-box;
-    float: right;
-    width: 50%;
-    height: 600px;
-    background-color: rgb(255, 198, 0);
+
+.form h6{
+    padding: 5px 5px;
 }
-.content-right P{
-    font-size: 15px;
-    font-weight: bolder;
-    font-style: oblique;
-    margin-top: 80px;
-    margin-left: 100px;
-}
-.content-right h3{
-    margin-top: 0px;
-    font-weight: bolder;
-}
-.content-right .p{
-    margin-top: -30px;
-    font-size: 13px;
-}
-.content-right .count{
-    float: right;
-    margin-top: 14%;
-    width: 80%;
-    height: 160px;
-    overflow: hidden;
-    box-sizing: border-box;
-    background-color: aliceblue;
+
+.output p{
+    padding: 40px 0;
+    text-align: center;
+    font-size: 16px;
+    
 }

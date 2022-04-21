@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,40 +17,34 @@
         <div class="main"> <!-- ini lokasi applikasi-->
             <div class="head"> <!-- navigation bar applikasi-->
                <ul>
-                    <li> BMI  </li>
-                    <li> Calorie </li>
-                    <li> Body Fat </li>
-                    <li> information </li>
+                    <li onclick="activateBMI()"> BMI  </li>
+                    <li onclick="activateCalorie()"> CALORIE </li>
+                    <li> BF% </li>
+                    <li> INFO</li>
+                    <li> <img src="./image/logo.png" onclick="resetEverything()"> </li>
                </ul>
             </div>
-            <div class="form"> <!-- ini form yang akan diisi-->
-                <form action="">
-                    <h6>Gender</h6>
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                    </select>
-                    <h6>Weight</h6>
-                    <input class="form-control form-control-sm" type="number" aria-label=".form-control-sm example">
-                    <h6>Height</h6>
-                    <input class="form-control form-control-sm" type="number" aria-label=".form-control-sm example">
-                    <h6>Activity level :</h6>
-                        <!-- jadiin drop down-->
-                        <select class="form-select-activity-level" for="activityLevel"> Choose your activity level: 
-                            <option value="lowLevel"> Jarang berolahraga </option>
-                            <option value="midLevel"> Kadang berolahraga </option>
-                            <option value="highLevel"> Sering berolahraga </option>
-                        </select>
-                </form>
-            </div>
-            <div class="buttons">
-                <button type="button" name="calculate" class="calculateButton"> <!-- function --> Calculate your BMI </button> 
-                <button type="button" name="reset" class="calculateButton"> <!-- function remove--> reset </button> 
-            </div>
-            <div class="output">
-                <p class="outputContent"> ini adalah output yang akan keluar nanti setelah tombol button di click.</p>
-            </div>
-        </div>
+            <div class="formPage" id="formPage"> <!-- ini form yang akan diisi-->
+                <div id="formpageh1"> 
+                    <h1> PICK A FUNCTION </h1>
+                    <br>
+                    <h3> proudly presented by:</h3>
+                    <h5><ul>
+                        <li style="font-style: italic"> Ezar Resha</li>
+                        <li> Awalludin Sairan</li>
+                        <li> Arizal Fikri </li>
+                        <li> Putra Ahmadani Pratikto </li>
+                        <li> Ivan Richmond</li>
+                    </ul> </h5>
+                </div>
     </div>
+    <script src="script.js"> </script>
+    
 </body>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+
+    
+
+</script>
 </html>

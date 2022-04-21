@@ -1,10 +1,8 @@
-function generatedBMI(beratBadan, tinggiBadan) {
+function generateBMI(beratBadan, tinggiBadan) {
     let tinggiBadanM = tinggiBadan / 100
     let bmi = (beratBadan / (tinggiBadanM * tinggiBadanM))
-    return bmi
+    return +bmi.toFixed(2)
 }
-console.log(generatedBMI(70, 175))
-
 function generatedCategoryBMI(bmi) {
     let result = ''
     if (bmi < 16.00) {
@@ -26,7 +24,6 @@ function generatedCategoryBMI(bmi) {
     }
     return result
 }
-
 function generatedIdealWeight(gender, tinggi) {
     let result = 0
 
@@ -38,13 +35,20 @@ function generatedIdealWeight(gender, tinggi) {
     return result
 }
 
-function generatedCalory(gender, tinggi, beratBadan, usia, aktivitas){
-    let result = ''
+function idealBMIRange(tinggi)
+{
+ let min = 18;
+ let max = 25;
+ 
+ return [ (tinggi*tinggi*min/10000) , (tinggi*tinggi*max/10000)]
+}
+function generatedCalorie(gender, tinggi, beratBadan, usia, aktivitas){
+    let result;
     let temp = 0
     let totalKalori = 0
-    if(gender === 'Pria'){
+    if(gender === 'Male'){
         temp = 66.5 + (13.7 * beratBadan) + (5 * tinggi) - (6.8 * usia)
-    }else if(gender === "Wanita"){
+    }else if(gender === "Female"){
         temp = 65.5 + (9.6 * beratBadan) + (1.8 * tinggi) - (4.7 * usia)
     }
     if(aktivitas ==='Tidak Pernah Berolahraga'){
@@ -54,48 +58,23 @@ function generatedCalory(gender, tinggi, beratBadan, usia, aktivitas){
     }else if (aktivitas ==='Sering Berolahraga'){
         totalKalori = temp * 1.4
     }
-    result = `${Math.floor(totalKalori)} Kalori`
+    result = Math.floor(totalKalori)
+
     return result
 }
-console.log(generatedCalory('Pria', 165, 65, 29, 'Jarang Berolahraga'))
 
-// Input dari HTML
+function recommendedCalorie(BMI , cal)
+{
 
-let gender = 'Pria';
-let age = 30;
-let height = 150;
-let weight = 50;
-let activityLevel = 'Sering Berolahraga';
-console.log(generatedBMI(weight,height))
-let BMI = generatedBMI(weight,height);
-console.log (`==============================`)
-console.log (generatedCategoryBMI(BMI))
-console.log (`==============================`)
-let idealWeight = generatedIdealWeight(gender,height)  // explore more "ideal BMI".
-let idealBMI = generatedBMI(idealWeight,height)
+let kaloriIdealPelan;
+let kaloriIdealDrastis;
+let result = []
+if (BMI >= 25) {
 
-console.log(idealBMI)
-console.log(generatedCalory(gender, height, weight, age, activityLevel)) 
-
-// kalo BMI > ideal BMI kita kasih saran menurunkan kalori intake ( menurunkan berat badan)
-// kalo BMI < ideal BMI kita kasih saran untuk menaikan.
-// naik pelan2 * 1.1,
-// naik drastis * 1.3,
-// turun * 0.9
-// turn drastis * 0.7 
-// batas minimum 1000kcal buat 2-2nya. >>>> jadi kalo rekomendasi intake kalori dibawah 1000, dijadikan 1000.
-
-console.log(BMI);
-console.log(idealBMI);
-
-let cal = generatedCalory(gender, height, weight, age, activityLevel);
-let kaloriIdealPelan = 0;
-let kaloriIdealDrastis = 0;
-
-if (BMI > idealBMI) {
     kaloriIdealPelan = cal * 0.9;
     kaloriIdealDrastis = cal * 0.7;
-} else if (BMI < idealBMI) {
+} 
+else if (BMI <= 18) {
     kaloriIdealPelan = cal * 1.1;
     kaloriIdealDrastis = cal * 1.3;
 }
@@ -109,8 +88,10 @@ if (kaloriIdealDrastis < 1000) {
     kaloriIdealDrastis = 1000;
 }
 
-console.log(kaloriIdealPelan);
-console.log(kaloriIdealDrastis);
+result.push(kaloriIdealPelan, kaloriIdealDrastis)
+
+return result
+}
 
 function WHtR(waist, height){
     let Whtr = waist / height * 100
@@ -128,4 +109,329 @@ function bodyFatPercentage(gender, weight, waist){
         bodyFatPercentage = 100*(-76.76 + (4.15*waistIn) - (0.082*weightLbs))/weightLbs
     }
     return bodyFatPercentage
+}
+// KALO MAU NAMBAH CELEB MASUKIN KESINI, PASTIKAN NAMANYA SAMA DENGAN FILE PNG YAHHHH (huruf besar, huruf kecil dan spasi)
+
+const celebrityList = { Female:[
+    {name:'Anne Hathaway',weight:59, height:173},
+    {name:'Amy Adams', weight:52, height:163},
+    {name:'Angelina Jolie', weight:59, height:169},
+    {name:'Beyonce', weight:59, height:170},
+    {name:'Cameron Diaz', weight:56, height:174},
+    {name:'Natalie Portman', weight:52, height:160},
+    {name:'Emma Watson', weight:50, height:165},
+    {name:'Adele Laurie Blue Adkins', weight: 63, height:175},
+    {name:'Serena Williams', weight:75, height:175},
+    {name:'Ronda Rousey', weight:61 ,height:170},
+    {name: 'Queen Latifah', weight:91 ,height:178}
+], Male:[
+    {name: 'Tom Cruise', weight:83, height:170},
+    {name: 'Arnold Schwarzenegger ', weight:120, height:187},
+    {name: 'Russel Crowe', weight:105 ,height:182},
+    {name: 'Gerard Butler', weight:102 ,height:188},
+    {name: 'Dwayne Johnson', weight:118, height:196},
+    {name: 'Tom Holland', weight:70, height:173},
+    {name: 'Robert Downey Jr.', weight:86, height:173},
+    {name: 'Chris Evans', weight:85 ,height:183},
+    {name: 'Jack Black', weight:120 ,height:168},
+    {name: 'Peter Dinklage', weight:50 ,height:135},
+    {name: 'Yoda', weight:13 ,height:66},
+    {name: 'Min Yoon-Gi (BTS Suga)', weight:59 ,height:174},
+    {name: 'Park Jimin (BTS Jimin)', weight:61 ,height:175},
+    {name: 'Jungkook (BTS Jungkook)', weight:70 , height:178},
+    {name: 'Benedict Cumberbatch', weight:78 ,height:183},
+]
+}
+
+
+
+function celebrityBMI(gender) 
+{
+let result = [];
+let tempArray = [];
+for (const key in celebrityList)
+{
+    if (key === gender)
+    {
+        for (let i = 0; i <celebrityList[gender].length; i++)
+        {
+            var celebBMI = generateBMI(celebrityList[gender][i].weight, celebrityList[gender][i].height)
+        tempArray.push( celebrityList[gender][i].name , celebBMI)
+        result.push(tempArray)
+        tempArray = [];
+        }
+    }
+
+    
+}
+return result;
+}
+
+function similarCeleb(BMI, genderedCelebBMI)
+{
+    let  randomCelebCount = 2;
+    let  result = [];
+    
+    
+     for ( let i=0; i< genderedCelebBMI.length; i++)
+     {
+        
+         let BMIDifference = Math.abs(BMI - genderedCelebBMI[i][1]) 
+
+         if(BMIDifference <= 1)
+         {
+             result.push(genderedCelebBMI[i])
+         }
+
+     }
+    
+     let randomNumber = Math.floor(Math.random() * result.length);
+     
+
+     return result[randomNumber];
+}
+
+// FUNCTION DIBAWAH JANGAN DIGANTI GANTI URUTANNYA TAKUTNYA RUSAK
+
+function process(){
+
+
+let weight = document.getElementById('weight').value;
+let height = document.getElementById('height').value;
+let gender = document.getElementById('gender').value;
+
+
+if(weight == '' || height == '')
+{
+Swal.fire({
+    title: 'Something is wrong?!',
+    text: 'please put a number in',
+    icon: 'error',
+    confirmButtonText: 'OK'
+  })
+}
+else if( isNaN(Number(weight)) || isNaN(Number(height)) )
+{
+    Swal.fire({
+        title: 'Numbers only please',
+        text: 'please put a number in',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      }) 
+}
+else
+{
+let BMI = generateBMI(weight,height);
+let BMICategory = generatedCategoryBMI(BMI);
+let idealWeight = generatedIdealWeight(gender, height)
+let idealBMIValues = idealBMIRange(height);
+
+if(BMI < 0)
+{
+    BMI = 0;
+}
+
+if(BMI > 40)
+{
+    BMI = 40;
+}
+
+let genderedCelebBMI = celebrityBMI(gender);
+let celebFriend = similarCeleb(BMI, genderedCelebBMI);
+
+document.getElementById('outputContent1').innerHTML = `YOUR BMI IS`
+document.getElementById('outputContent2').innerHTML = BMI;
+document.getElementById('outputContent3').innerHTML = `YOUR BMI CATEGORY IS ${BMICategory}.`
+document.getElementById('outputContent4').innerHTML = `HEALTHY WEIGHT RANGE FOR YOU IS:`
+document.getElementById('outputContent5').innerHTML = `${Math.floor(idealBMIValues[0])} kg - ${Math.floor(idealBMIValues[1])} kg`
+document.getElementById('outputContent6').innerHTML = `Your BMI is similar to... ${celebFriend[0]}`
+}
+}
+
+function cleanSlate(){
+
+    document.getElementById('outputContent1').innerHTML = '';
+    document.getElementById('outputContent2').innerHTML = '';
+    document.getElementById('outputContent3').innerHTML = '';
+    document.getElementById('outputContent4').innerHTML = '';
+    document.getElementById('outputContent5').innerHTML = '';
+}
+
+// buat mangil BMI section
+function activateBMI(){
+     document.getElementById('formPage').innerHTML =`
+     <form method="post" id="myForm" target="script.js">
+     <table style="width:100%">
+     <tr> 
+         <td> <h6>Gender:</h6> </td> 
+     </tr>
+    <tr> 
+        <td> <select for="gender" style="width: 90%"> 
+             <option value="Male" id="gender">Male</option>
+             <option value="Female" id="gender">Female</option>
+            </select> 
+     </td> 
+     </tr>
+     <tr>
+         <td>  <h6>Weight: (kg) </h6> </td>
+         <td>  <h6>Height: (cm) </h6> </td>
+     </tr>
+     <tr>
+         <td> <input class="numberInput" id="weight" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your weight (number)" title="Please input numbers only"> </td>
+         <td> <input class="numberInput" id="height" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your height (number)" title="Please input numbers only"> </td>
+     </tr>
+     <tr>
+         <td> <h6>Activity level :</h6> </td>
+         <td> <h6>Age: </h6> </td>
+     </tr>
+      <tr>
+          <td> <select id="activityLevel" for="activityLevel" style="width: 90%"> Choose your activity level: 
+             <option value="Tidak Pernah Berolahraga"> Tidak pernah berolahraga </option>
+             <option value="Jarang Berolahraga"> Jarang berolahraga </option>
+             <option value="Sering Berolahraga"> Sering berolahraga </option> 
+         </select> </td>
+         <td> <input class="numberInput" id="age" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your age (number)" title="Please input numbers only"></td> 
+     </tr>
+     </table>
+ </div>
+ <div class="buttons">
+     <table style="width:100%">
+         <tr>
+             <td> <button  type="button" onclick="process()" class="button" id="left">  Calculate your BMI  </button> </td>
+             <td>  <button  type="reset" onclick="cleanSlate()" class="button"id="right" >   reset </button>  </td>
+         </tr>
+     </table>
+ </div> 
+ <div class="output">
+ <p id="outputContent1"> </p>
+ <p id="outputContent2"> </p>
+ <p id="outputContent3"> </p>
+ <p id="outputContent4"> </P>
+ <p id="outputContent5"> </p>
+ <p id="outputContent6"> </p>
+ </div>
+`
+}
+
+// buat mangil Calorie section
+function activateCalorie(){
+    
+   
+    document.getElementById('formPage').innerHTML =`
+    <form method="post" id="myForm" target="script.js">
+                    <table style="width:100%">
+                    <tr> 
+                        <td> <h6>Gender:</h6> </td> 
+                    </tr>
+                   <tr> 
+                       <td> <select for="gender" style="width: 90%"> 
+                            <option value="Male" id="gender">Male</option>
+                            <option value="Female" id="gender">Female</option>
+                           </select> 
+                    </td> 
+                    </tr>
+                    <tr>
+                        <td>  <h6>Weight: (kg) </h6> </td>
+                        <td>  <h6>Height: (cm) </h6> </td>
+                    </tr>
+                    <tr>
+                        <td> <input class="numberInput" id="weight" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your weight (number)" title="Please input numbers only"> </td>
+                        <td> <input class="numberInput" id="height" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your height (number)" title="Please input numbers only"> </td>
+                    </tr>
+                    <tr>
+                        <td> <h6>Activity level :</h6> </td>
+                        <td> <h6>Age: </h6> </td>
+                    </tr>
+                     <tr>
+                         <td> <select id="activityLevel" for="activityLevel" style="width: 90%"> Choose your activity level: 
+                            <option value="Tidak Pernah Berolahraga"> Tidak pernah berolahraga </option>
+                            <option value="Jarang Berolahraga"> Jarang berolahraga </option>
+                            <option value="Sering Berolahraga"> Sering berolahraga </option> 
+                        </select> </td>
+                        <td> <input class="numberInput" id="age" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your age (number)" title="Please input numbers only"></td> 
+                    </tr>
+                    </table>
+                </div>
+                <div class="buttons">
+                    <table style="width:100%">
+                        <tr>
+                            <td> <button  type="button" onclick="calorieCalculation()" class="button" id="left">  Calculate your BMI  </button> </td>
+                            <td>  <button  type="reset" onclick="cleanSlate()" class="button"id="right" >   reset </button>  </td>
+                        </tr>
+                    </table>
+                </div> 
+                <div class="output">
+                <p id="outputContent1"> </p>
+                <p id="outputContent2"> </p>
+                <p id="outputContent3"> </p>
+                <p id="outputContent4"> </P>
+                <p id="outputContent5"> </p>
+                <p id="outputContent6"> </p>
+                </div>
+`
+}
+
+function resetEverything(){
+    document.getElementById('formPage').innerHTML =`
+    <div id="formpageh1"> 
+                    <h1> PICK A FUNCTION </h1>
+                    <br>
+                    <h3> proudly presented by:</h3>
+                    <h5><ul>
+                        <li style="font-style: italic"> Ezar Resha</li>
+                        <li> Awalludin Sairan</li>
+                        <li> Arizal Fikri </li>
+                        <li> Putra Ahmadani Pratikto </li>
+                        <li> Ivan Richmond</li>
+                    </ul> </h5>
+                </div>`
+    }
+
+function calorieCalculation() {
+
+    let weight = +document.getElementById('weight').value;
+    let height = +document.getElementById('height').value;
+    let gender = document.getElementById('gender').value;
+    let age = +document.getElementById('age').value;
+    let activityLevel = document.getElementById('activityLevel').value;
+    
+    if(weight == '' || height == '' || age == '')
+    {
+    Swal.fire({
+        title: 'Something is wrong?!',
+        text: 'please put a number in',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      })
+    }
+    else if( isNaN(Number(weight)) || isNaN(Number(height)) || isNaN(Number(age)) )
+    {
+        Swal.fire({
+            title: 'Numbers only please',
+            text: 'please put a number in',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          }) 
+    }
+    else
+    {
+         let calculatedCalories = generatedCalorie(gender,height,weight,age,activityLevel);
+         let BMI = generateBMI(weight,height);
+         let calorieReccomendation = recommendedCalorie(BMI,calculatedCalories)
+
+         
+        document.getElementById('outputContent1').innerHTML = `YOUR BASAL METABOLISM RATE IS:`
+        document.getElementById('outputContent2').innerHTML =  `${calculatedCalories} calories.`
+        if(BMI <= 18 )
+        {
+        document.getElementById('outputContent3').innerHTML =  `The reccomended calorie intake for weight gain is ${calorieReccomendation[0]} , up to ${calorieReccomendation[1]} .`
+        }
+        else if (BMI >= 25)
+        {
+        document.getElementById('outputContent3').innerHTML =  `The reccomended calorie intake for weight loss is ${calorieReccomendation[0]} , up to lebih drastis adalah:${calorieReccomendation[1]} .`
+        }
+        
+    
+
+    }
 }

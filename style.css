@@ -1,13 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Rubik', Arial, sans-serif;
+    font-family: 'Open Sans' , sans-serif;
     box-sizing: border-box;
 }
-.body{
-    background-color: #1b1b1b;
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("./image/background.jpg");
+    background-size: contain;
 }
-.container{
+
+
+.container {
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -16,56 +22,147 @@
 }
 
 .main {
-        max-width: 1080px;
-        background: #fff;
-        width: 720px;
-        height: 540px;
-        
-    }
+    max-width: 1080px;
+    background-color: white;
+    width: 720px;
+    border: 150px;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
 
-.main .head{
-    background-color: #1b1b1b;
 }
 
-.main .head ul li{
+.main .head {
+    background-color: #00335a;
+}
+
+.main .head ul li {
     list-style: none;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 9px;
     font-size: 16px;
     text-align: center;
-    font-weight: 300;
-    color:white;
+    font-weight: 450;
+    color: white;
+    align-items: center;
+    padding: 20px;
+   
 }
-.main .form{
-    background-color: red;
+.head ul li img{
+    width: 40%;
+    
+    
+}
+.main .head ul li:hover{
+    scale: 1.4;
+    font-weight: 600;
+    cursor:pointer;
+    
 }
 
-.main .buttons{
-    background-color: blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-}
 
-.calculateButton{
+#left{
     padding: 10px 20px;
-    margin: 10px 20px;
-}
-.main .output{
-    background-color: white;
+    border-radius: 10px;
+    background-color: #00335a;
+    color: white;
+    margin-left: 26%;
+
 }
 
-.form{
+#right{
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #00335a;
+    color: white;
+   margin-left: -63%
+
+}
+
+
+.formPage {
     padding: 20px 20px;
 }
 
-.form h6{
+.form h6 {
     padding: 5px 5px;
 }
 
 .output p{
-    padding: 40px 0;
     text-align: center;
-    font-size: 16px;
+}
+#outputContent1{
+    padding: 40px 0 0 0;
+    text-align: center;
+    font-size: 30px;
+
+}
+#outputContent2{
+    font-size: 60px;
+    text-align:center;
+    color:#1b1b1b;
+    font-weight: 1000;
+    opacity: 90%;
+
+
+}
+
+table input{
+    width:90%;
+}
+#outputContent5{ 
+    text-align: center;
+    font-size: 75px;
+    font-weight: 1000;
+    color:#1b1b1b;
+    opacity: 90%;
+}
+h6{
+    margin-top: 10px;
+    
+    font-weight: 800;
+}
+
+.numberInput{
+    width:100%;
+}
+
+.numberInput:invalid{
+    border:red solid 3px;    
+}
+
+
+
+#formpageh1 h1{
+    text-align: center;
+    font-size: 75px;
+    font-weight: 1000;
+    color:#1b1b1b;
+    opacity: 90%;
     
 }
+
+#formpageh1 h3{
+    text-align: left;
+    font-size: 15px;
+    font-weight: 250;
+    color:#1b1b1b;
+    opacity: 90%;
+    
+}
+
+#formpageh1 h5{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    color:#1b1b1b;
+    opacity: 90%;
+    text-transform: uppercase;
+    
+}
+#formpageh1 ul li {
+    list-style: none;
+}
+

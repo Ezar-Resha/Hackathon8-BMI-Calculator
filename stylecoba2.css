@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.body {
+    margin: 0;
+    padding: 0;
+    background: url(./images/background.jpg) no-repeat;
+    background-size: cover;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.main {
+    max-width: 1080px;
+    background-color: white;
+    width: 720px;
+    height: 620px;
+    border: 150px;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    
+
+}
+
+.main .head {
+    background-color: #00335a;
+}
+
+.main .head ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+    color: white;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.main .form {
+    background-color: beige;
+}
+
+.main .buttons {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.calculateButton {
+    padding: 10px 20px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    background-color: #00335a;
+    color: white;
+}
+
+.main .output {
+    background-color: white
+}
+
+.form {
+    padding: 20px 20px;
+}
+
+.form h6 {
+    padding: 5px 5px;
+}
+
+.output p {
+    padding: 40px 0;
+    text-align: center;
+    font-size: 16px;
+
+}
+h6{
+    margin-top: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+}
+img{
+    float: right;
+}

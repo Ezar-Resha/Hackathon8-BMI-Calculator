@@ -59,3 +59,73 @@ function generatedCalory(gender, tinggi, beratBadan, usia, aktivitas){
 }
 console.log(generatedCalory('Pria', 165, 65, 29, 'Jarang Berolahraga'))
 
+// Input dari HTML
+
+let gender = 'Pria';
+let age = 30;
+let height = 150;
+let weight = 50;
+let activityLevel = 'Sering Berolahraga';
+console.log(generatedBMI(weight,height))
+let BMI = generatedBMI(weight,height);
+console.log (`==============================`)
+console.log (generatedCategoryBMI(BMI))
+console.log (`==============================`)
+let idealWeight = generatedIdealWeight(gender,height)  // explore more "ideal BMI".
+let idealBMI = generatedBMI(idealWeight,height)
+
+console.log(idealBMI)
+console.log(generatedCalory(gender, height, weight, age, activityLevel)) 
+
+// kalo BMI > ideal BMI kita kasih saran menurunkan kalori intake ( menurunkan berat badan)
+// kalo BMI < ideal BMI kita kasih saran untuk menaikan.
+// naik pelan2 * 1.1,
+// naik drastis * 1.3,
+// turun * 0.9
+// turn drastis * 0.7 
+// batas minimum 1000kcal buat 2-2nya. >>>> jadi kalo rekomendasi intake kalori dibawah 1000, dijadikan 1000.
+
+console.log(BMI);
+console.log(idealBMI);
+
+let cal = generatedCalory(gender, height, weight, age, activityLevel);
+let kaloriIdealPelan = 0;
+let kaloriIdealDrastis = 0;
+
+if (BMI > idealBMI) {
+    kaloriIdealPelan = cal * 0.9;
+    kaloriIdealDrastis = cal * 0.7;
+} else if (BMI < idealBMI) {
+    kaloriIdealPelan = cal * 1.1;
+    kaloriIdealDrastis = cal * 1.3;
+}
+
+
+if (kaloriIdealPelan < 1000) {
+    kaloriIdealPelan = 1000;
+}
+
+if (kaloriIdealDrastis < 1000) {
+    kaloriIdealDrastis = 1000;
+}
+
+console.log(kaloriIdealPelan);
+console.log(kaloriIdealDrastis);
+
+function WHtR(waist, height){
+    let Whtr = waist / height * 100
+
+    return Whtr
+}
+
+function bodyFatPercentage(gender, weight, waist){
+    let weightLbs = weight * 2.20462262
+    let waistIn = waist * 0.39370079
+    let bodyFatPercentage = 0
+    if(gender ==='Pria'){
+        bodyFatPercentage = 100*(-98.42 + (4.15*waistIn) - (0.082*weightLbs))/weightLbs
+    }else if(gender ==='Wanita'){
+        bodyFatPercentage = 100*(-76.76 + (4.15*waistIn) - (0.082*weightLbs))/weightLbs
+    }
+    return bodyFatPercentage
+}

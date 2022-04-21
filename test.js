@@ -28,9 +28,6 @@ const celebrityList = { Female:[
     {name: 'Benedict Cumberbatch', weight:78 ,height:183},
 ]
 }
-let BMI = 30;
-let gender ='Male'
-
 
 function generatedBMI(beratBadan, tinggiBadan) {
     let tinggiBadanM = tinggiBadan / 100

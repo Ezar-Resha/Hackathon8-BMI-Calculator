@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', Arial, sans-serif;
+    overflow: hidden;
+}
+.container{
+    width: 100%;
+    box-sizing: border-box;
+}
+.container .content-left{
+    float: left;
+    box-sizing: border-box;
+}
+.container h3{
+    margin: 50px 100px;
+    font-family: 'Orelega One', cursive;;
+}
+form h6{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.form-check{
+    margin-top: 20px;
+}
+.form-check h6{
+    margin-bottom: 10px;
+}
+.form-check input, label{
+    margin-top: 10px;
+}
+.content-left button{
+    margin: 50px 120px;
+    color: aliceblue;
+}
+.container .content-right{
+    box-sizing: border-box;
+    float: right;
+    width: 50%;
+    height: 600px;
+    background-color: rgb(255, 198, 0);
+}
+.content-right P{
+    font-size: 15px;
+    font-weight: bolder;
+    font-style: oblique;
+    margin-top: 80px;
+    margin-left: 100px;
+}
+.content-right h3{
+    margin-top: 0px;
+    font-weight: bolder;
+}
+.content-right .p{
+    margin-top: -30px;
+    font-size: 13px;
+}
+.content-right .count{
+    float: right;
+    margin-top: 14%;
+    width: 80%;
+    height: 160px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: aliceblue;
+}

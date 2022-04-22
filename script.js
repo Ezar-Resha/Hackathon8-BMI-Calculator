@@ -453,7 +453,7 @@ function information() {
     <p class="informationP">Body Mass Index (BMI) atau Indeks Massa Tubuh (IMT) adalah angka yang menjadi penilaian standar untuk menentukan apakah berat badan Anda tergolong normal, kurang, berlebih, atau obesitas.</p>
     <p class="informationP">Rumus yang digunakan adalah BMI = Berat Badan / (Tinggi Badan)^2 </p>
 
-    <h5>Pengertian BMR</h5>
+    <h5 class="informationh5">Pengertian BMR</h5>
     <p class="informationP"> BMR atau laju metabolisme basal adalah perkiraan jumlah energi yang digunakan untuk menjalankan fungsi dasar tubuh dalam kondisi istirahat.</p>
     <p class="informationP">Rumus yang digunakan untuk menghitung BMR pada pria dan wanita dapat diketahui dengan rumus berikut.</p>
     <ul class="Rumus">
@@ -461,7 +461,7 @@ function information() {
          <li>BMR Wanita = 65,5 + (9,6 × berat badan) + (1,8 × tinggi badan) – (4,7 × usia)</li>
     </ul>
 
-    <h5>Pengertian Body Fat Percentage</h5>
+    <h5 class="informationh5">Pengertian Body Fat Percentage</h5>
     <p class="informationP">Body Fat Percentage adalah rasio antara lemak tubuh terhadap total berat tubuh.</p>
     <p class="informationP">Rumus yang digunakan untuk menghitung Body Fat Percentage pada pria dan wanita dapat diketahui dengan rumus berikut.</p>
     <ul class="Rumus">

@@ -281,9 +281,10 @@ function activateBMI() {
          <td> <h6>Gender:</h6> </td> 
      </tr>
     <tr> 
-        <td> <select for="gender" style="width: 90%"> 
-             <option value="Male" id="gender">Male</option>
-             <option value="Female" id="gender">Female</option>
+        <td> <select for="gender" style="width: 90%" class="form-control box">
+            <option selected>Select Gender</>
+            <option value="Male" id="gender">Male</option>
+            <option value="Female" id="gender">Female</option>
             </select> 
      </td> 
      </tr>
@@ -292,20 +293,20 @@ function activateBMI() {
          <td>  <h6>Height: (cm) </h6> </td>
      </tr>
      <tr>
-         <td> <input class="numberInput" id="weight" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your weight (number)" title="Please input numbers only"> </td>
-         <td> <input class="numberInput" id="height" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your height (number)" title="Please input numbers only"> </td>
+         <td> <input class="numberInput form-control box" id="weight" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your weight (number)" title="Please input numbers only"> </td>
+         <td> <input class="numberInput form-control box" id="height" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your height (number)" title="Please input numbers only"> </td>
      </tr>
      <tr>
          <td> <h6>Activity level :</h6> </td>
          <td> <h6>Age: </h6> </td>
      </tr>
       <tr>
-          <td> <select id="activityLevel" for="activityLevel" style="width: 90%"> Choose your activity level: 
+          <td> <select id="activityLevel" class="form-control box" for="activityLevel" style="width: 90%"> Choose your activity level: 
              <option value="Tidak Pernah Berolahraga"> Tidak pernah berolahraga </option>
              <option value="Jarang Berolahraga"> Jarang berolahraga </option>
              <option value="Sering Berolahraga"> Sering berolahraga </option> 
          </select> </td>
-         <td> <input class="numberInput" id="age" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your age (number)" title="Please input numbers only"></td> 
+         <td> <input class="numberInput form-control box" id="age" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your age (number)" title="Please input numbers only"></td> 
      </tr>
      </table>
  </div>
@@ -339,7 +340,8 @@ function activateCalorie() {
                         <td> <h6>Gender:</h6> </td> 
                     </tr>
                    <tr> 
-                       <td> <select for="gender" style="width: 90%"> 
+                       <td> <select for="gender" style="width: 90%" class="form-control box">
+                            <option selected>Select Gender</> 
                             <option value="Male" id="gender">Male</option>
                             <option value="Female" id="gender">Female</option>
                            </select> 
@@ -350,20 +352,20 @@ function activateCalorie() {
                         <td>  <h6>Height: (cm) </h6> </td>
                     </tr>
                     <tr>
-                        <td> <input class="numberInput" id="weight" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your weight (number)" title="Please input numbers only"> </td>
-                        <td> <input class="numberInput" id="height" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your height (number)" title="Please input numbers only"> </td>
+                        <td> <input class="numberInput form-control box" id="weight" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your weight (number)" title="Please input numbers only"> </td>
+                        <td> <input class="numberInput form-control box" id="height" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your height (number)" title="Please input numbers only"> </td>
                     </tr>
                     <tr>
                         <td> <h6>Activity level :</h6> </td>
                         <td> <h6>Age: </h6> </td>
                     </tr>
                      <tr>
-                         <td> <select id="activityLevel" for="activityLevel" style="width: 90%"> Choose your activity level: 
+                         <td> <select id="activityLevel" class="form-control box" for="activityLevel" style="width: 90%"> Choose your activity level: 
                             <option value="Tidak Pernah Berolahraga"> Tidak pernah berolahraga </option>
                             <option value="Jarang Berolahraga"> Jarang berolahraga </option>
                             <option value="Sering Berolahraga"> Sering berolahraga </option> 
                         </select> </td>
-                        <td> <input class="numberInput" id="age" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your age (number)" title="Please input numbers only"></td> 
+                        <td> <input class="numberInput form-control box" id="age" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your age (number)" title="Please input numbers only"></td> 
                     </tr>
                     </table>
                 </div>
@@ -397,7 +399,8 @@ function generatedBf() {
                         <td> <h6>Gender:</h6> </td> 
                     </tr>
                    <tr> 
-                       <td> <select for="gender" style="width: 90%"> 
+                       <td> <select for="gender" style="width: 90%" class="form-control box">
+                            <option selected>Select Gender</> 
                             <option value="Male" id="gender">Male</option>
                             <option value="Female" id="gender">Female</option>
                            </select> 
@@ -408,20 +411,20 @@ function generatedBf() {
                         <td>  <h6>Height: (cm) </h6> </td>
                     </tr>
                     <tr>
-                        <td> <input class="numberInput" id="weight" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your weight (number)" title="Please input numbers only"> </td>
-                        <td> <input class="numberInput" id="height" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your height (number)" title="Please input numbers only"> </td>
+                        <td> <input class="numberInput form-control box" id="weight" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your weight (number)" title="Please input numbers only"> </td>
+                        <td> <input class="numberInput form-control box" id="height" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your height (number)" title="Please input numbers only"> </td>
                     </tr>
                     <tr>
                         <td> <h6>Activity level :</h6> </td>
                         <td> <h6>Waist: (cm) </h6> </td>
                     </tr>
                      <tr>
-                         <td> <select id="activityLevel" for="activityLevel" style="width: 90%"> Choose your activity level: 
+                         <td> <select id="activityLevel" class="form-control box" for="activityLevel" style="width: 90%"> Choose your activity level: 
                             <option value="Tidak Pernah Berolahraga"> Tidak pernah berolahraga </option>
                             <option value="Jarang Berolahraga"> Jarang berolahraga </option>
                             <option value="Sering Berolahraga"> Sering berolahraga </option> 
                         </select> </td>
-                        <td> <input class="numberInput" id="waist" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your waist size(number)" title="Please input numbers only"></td> 
+                        <td> <input class="numberInput form-control box" id="waist" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your waist size(number)" title="Please input numbers only"></td> 
                     </tr>
                     </table>
                 </div>

@@ -284,6 +284,7 @@ function cleanSlate() {
     document.getElementById('outputContent3').innerHTML = '';
     document.getElementById('outputContent4').innerHTML = '';
     document.getElementById('outputContent5').innerHTML = '';
+    document.getElementById('outputContent6').innerHTML = '';
 }
 
 // buat mangil BMI section
@@ -295,7 +296,7 @@ function activateBMI() {
          <td> <h6>Gender:</h6> </td> 
      </tr>
     <tr> 
-        <td> <select for="gender" style="width: 90%" class="form-control box">
+        <td> <select for="gender" style="width: 90%" >
             <option selected>Select Gender</>
             <option value="Male" id="gender">Male</option>
             <option value="Female" id="gender">Female</option>
@@ -307,15 +308,15 @@ function activateBMI() {
          <td>  <h6>Height: (cm) </h6> </td>
      </tr>
      <tr>
-         <td> <input class="numberInput form-control box" id="weight" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your weight (number)" title="Please input numbers only"> </td>
-         <td> <input class="numberInput form-control box" id="height" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your height (number)" title="Please input numbers only"> </td>
+         <td> <input class="numberInput " id="weight" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your weight (number)" title="Please input numbers only"> </td>
+         <td> <input class="numberInput " id="height" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your height (number)" title="Please input numbers only"> </td>
      </tr>
      <tr>
          <td> <h6>Activity level :</h6> </td>
          <td> <h6>Age: </h6> </td>
      </tr>
       <tr>
-          <td> <select id="activityLevel" class="form-control box" for="activityLevel" style="width: 90%"> Choose your activity level: 
+          <td> <select id="activityLevel"  for="activityLevel" style="width: 90%"> Choose your activity level: 
              <option value="Tidak Pernah Berolahraga"> Tidak pernah berolahraga </option>
              <option value="Jarang Berolahraga"> Jarang berolahraga </option>
              <option value="Sering Berolahraga"> Sering berolahraga </option> 

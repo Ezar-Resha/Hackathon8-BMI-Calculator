@@ -296,7 +296,7 @@ function activateBMI() {
          <td> <h6>Gender:</h6> </td> 
      </tr>
     <tr> 
-        <td> <select id="gender" style="width: 90%" >
+        <td> <select for="gender" id="gender" style="width: 90%" >
             
             <option value="Male">Male</option>
             <option value="Female">Female</option>

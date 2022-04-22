@@ -71,10 +71,14 @@ function recommendedCalorie(BMI, cal) {
 
         kaloriIdealPelan = cal * 0.9;
         kaloriIdealDrastis = cal * 0.7;
+        kaloriIdealPelan = kaloriIdealPelan.toFixed(1)
+        kaloriIdealDrastis = kaloriIdealDrastis.toFixed(1)
     }
     else if (BMI <= 18) {
         kaloriIdealPelan = cal * 1.1;
         kaloriIdealDrastis = cal * 1.3;
+        kaloriIdealPelan = kaloriIdealPelan.toFixed(1)
+        kaloriIdealDrastis = kaloriIdealDrastis.toFixed(1)
     }
 
 
@@ -105,6 +109,12 @@ function bodyFatPercentage(gender, height, waist) {
     } else if (gender === 'Female') {
         bodyFatPercentage = 76 - (20 * height / waist)
     }
+
+    if( +bodyFatPercentage < 0)
+    {
+        bodyFatPercentage = 0;
+    }
+    
     return +bodyFatPercentage.toFixed(2)
 }
 
@@ -213,8 +223,8 @@ function process() {
 
     if (weight == '' || height == '') {
         Swal.fire({
-            title: 'Something is wrong?!',
-            text: 'please put a number in',
+            title: 'ada yang salah!',
+            text: 'tolong masukkan angka',
             icon: 'error',
             confirmButtonText: 'OK'
         })
@@ -222,7 +232,7 @@ function process() {
     else if (isNaN(Number(weight)) || isNaN(Number(height))) {
         Swal.fire({
             title: 'Numbers only please',
-            text: 'please put a number in',
+            text: 'tolong masukkan angka',
             icon: 'error',
             confirmButtonText: 'OK'
         })
@@ -244,12 +254,12 @@ function process() {
         let genderedCelebBMI = celebrityBMI(gender);
         let celebFriend = similarCeleb(BMI, genderedCelebBMI);
 
-        document.getElementById('outputContent1').innerHTML = `YOUR BMI IS`
+        document.getElementById('outputContent1').innerHTML = `BMI KAMU ADALAH`
         document.getElementById('outputContent2').innerHTML = BMI;
-        document.getElementById('outputContent3').innerHTML = `YOUR BMI CATEGORY IS ${BMICategory}.`
-        document.getElementById('outputContent4').innerHTML = `HEALTHY WEIGHT RANGE FOR YOU IS:`
+        document.getElementById('outputContent3').innerHTML = `biasa dikategorikan sebagai <b> ${BMICategory}. <b>`
+        document.getElementById('outputContent4').innerHTML = `Menurut index BMI, rekomenasi berat badan yang sehat untuk kamu adalah`
         document.getElementById('outputContent5').innerHTML = `${Math.floor(idealBMIValues[0])} kg - ${Math.floor(idealBMIValues[1])} kg`
-        document.getElementById('outputContent6').innerHTML = `Your BMI is similar to... ${celebFriend[0]}`
+        document.getElementById('outputContent6').innerHTML = `BMI kamu mirip dengan selebriti... <b> ${celebFriend[0]}<b> <br> <img src="./celebrity/${gender}/${celebFriend[0]}.PNG" width="256" height ="256">`
     }
 }
 
@@ -403,7 +413,7 @@ function generatedBf() {
                     </tr>
                     <tr>
                         <td> <h6>Activity level :</h6> </td>
-                        <td> <h6>Waist: </h6> </td>
+                        <td> <h6>Waist: (cm) </h6> </td>
                     </tr>
                      <tr>
                          <td> <select id="activityLevel" for="activityLevel" style="width: 90%"> Choose your activity level: 
@@ -411,7 +421,7 @@ function generatedBf() {
                             <option value="Jarang Berolahraga"> Jarang berolahraga </option>
                             <option value="Sering Berolahraga"> Sering berolahraga </option> 
                         </select> </td>
-                        <td> <input class="numberInput" id="waist" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your waist (number)" title="Please input numbers only"></td> 
+                        <td> <input class="numberInput" id="waist" type="number" style="width: 90%" pattern="[0-9]" required placeholder="Enter your waist size(number)" title="Please input numbers only"></td> 
                     </tr>
                     </table>
                 </div>
@@ -488,8 +498,8 @@ function calorieCalculation() {
 
     if (weight == '' || height == '' || age == '') {
         Swal.fire({
-            title: 'Something is wrong?!',
-            text: 'please put a number in',
+            title: 'ada yang salah!',
+            text: 'tolong masukkan angka',
             icon: 'error',
             confirmButtonText: 'OK'
         })
@@ -497,7 +507,7 @@ function calorieCalculation() {
     else if (isNaN(Number(weight)) || isNaN(Number(height)) || isNaN(Number(age))) {
         Swal.fire({
             title: 'Numbers only please',
-            text: 'please put a number in',
+            text: 'tolong masukkan angka',
             icon: 'error',
             confirmButtonText: 'OK'
         })
@@ -514,7 +524,7 @@ function calorieCalculation() {
             document.getElementById('outputContent3').innerHTML = `The reccomended calorie intake for weight gain is ${calorieReccomendation[0]} , up to ${calorieReccomendation[1]} .`
         }
         else if (BMI >= 25) {
-            document.getElementById('outputContent3').innerHTML = `The reccomended calorie intake for weight loss is ${calorieReccomendation[0]} , up to lebih drastis adalah:${calorieReccomendation[1]} .`
+            document.getElementById('outputContent3').innerHTML = `The reccomended calorie intake for weight loss is ${calorieReccomendation[0]} , up to ${calorieReccomendation[1]} .`
         }
 
 
@@ -533,8 +543,8 @@ function bodyFatCalculation() {
 
     if (weight == '' || height == '' || waist == '') {
         Swal.fire({
-            title: 'Something is wrong?!',
-            text: 'please put a number in',
+            title: 'ada yang salah!',
+            text: 'tolong masukkan angka',
             icon: 'error',
             confirmButtonText: 'OK'
         })
@@ -542,7 +552,7 @@ function bodyFatCalculation() {
     else if (isNaN(Number(weight)) || isNaN(Number(height)) || isNaN(Number(waist))) {
         Swal.fire({
             title: 'Numbers only please',
-            text: 'please put a number in',
+            text: 'tolong masukkan angka',
             icon: 'error',
             confirmButtonText: 'OK'
         })
@@ -552,9 +562,9 @@ function bodyFatCalculation() {
         let bodyFatCategory = generatedCategoryBodyFat(gender, calculateBodyFat)
 
 
-        document.getElementById('outputContent1').innerHTML = `YOUR BODY FATE % IS:`
+        document.getElementById('outputContent1').innerHTML = `BODY FAT % KAMU ADALAH:`
         document.getElementById('outputContent2').innerHTML = `${calculateBodyFat}%`
-        document.getElementById('outputContent3').innerHTML = `YOUR BODY FATE CATEGORY IS ${bodyFatCategory}.`
+        document.getElementById('outputContent3').innerHTML = `Bisa dikategorikan sebagai : <b> ${bodyFatCategory} <b> .`
 }
 
 }

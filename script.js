@@ -297,7 +297,7 @@ function activateBMI() {
      </tr>
     <tr> 
         <td> <select for="gender" style="width: 90%" >
-            <option selected>Select Gender</>
+            
             <option value="Male" id="gender">Male</option>
             <option value="Female" id="gender">Female</option>
             </select> 
@@ -356,7 +356,7 @@ function activateCalorie() {
                     </tr>
                    <tr> 
                        <td> <select for="gender" style="width: 90%" class="form-control box">
-                            <option selected>Select Gender</> 
+                            
                             <option value="Male" id="gender">Male</option>
                             <option value="Female" id="gender">Female</option>
                            </select> 
@@ -415,7 +415,7 @@ function generatedBf() {
                     </tr>
                    <tr> 
                        <td> <select for="gender" style="width: 90%" class="form-control box">
-                            <option selected>Select Gender</> 
+                           
                             <option value="Male" id="gender">Male</option>
                             <option value="Female" id="gender">Female</option>
                            </select> 

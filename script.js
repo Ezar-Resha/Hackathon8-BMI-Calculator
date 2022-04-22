@@ -257,7 +257,7 @@ function process() {
         document.getElementById('outputContent1').innerHTML = `BMI KAMU ADALAH`
         document.getElementById('outputContent2').innerHTML = BMI;
         document.getElementById('outputContent3').innerHTML = `biasa dikategorikan sebagai <b> ${BMICategory}. <b>`
-        document.getElementById('outputContent4').innerHTML = `Menurut index BMI, rekomenasi berat badan yang sehat untuk kamu adalah`
+        document.getElementById('outputContent4').innerHTML = `Menurut index BMI, rekomendasi berat badan yang sehat untuk kamu adalah`
         document.getElementById('outputContent5').innerHTML = `${Math.floor(idealBMIValues[0])} kg - ${Math.floor(idealBMIValues[1])} kg`
         document.getElementById('outputContent6').innerHTML = `BMI kamu mirip dengan selebriti... <b> ${celebFriend[0]}<b> <br> <img src="./celebrity/${gender}/${celebFriend[0]}.PNG" width="256" height ="256">`
     }
@@ -518,13 +518,13 @@ function calorieCalculation() {
         let calorieReccomendation = recommendedCalorie(BMI, calculatedCalories)
 
 
-        document.getElementById('outputContent1').innerHTML = `YOUR BASAL METABOLISM RATE IS:`
+        document.getElementById('outputContent1').innerHTML = `Basal metabolism rate kamu adalah:`
         document.getElementById('outputContent2').innerHTML = `${calculatedCalories} calories.`
         if (BMI <= 18) {
-            document.getElementById('outputContent3').innerHTML = `The reccomended calorie intake for weight gain is ${calorieReccomendation[0]} , up to ${calorieReccomendation[1]} .`
+            document.getElementById('outputContent3').innerHTML = `Kalori yang disarankan untuk peningkatan berat badan adalah ${calorieReccomendation[0]} , sampai dengan ${calorieReccomendation[1]} .`
         }
         else if (BMI >= 25) {
-            document.getElementById('outputContent3').innerHTML = `The reccomended calorie intake for weight loss is ${calorieReccomendation[0]} , up to ${calorieReccomendation[1]} .`
+            document.getElementById('outputContent3').innerHTML = `Kalori yang disarankan untuk penurunan berat badan adalah ${calorieReccomendation[0]} , sampai dengan ${calorieReccomendation[1]} .`
         }
 
 

@@ -47,7 +47,7 @@ function generatedCalorie(gender, tinggi, beratBadan, usia, aktivitas) {
     let totalKalori = 0
     if (gender === 'Male') {
         temp = 66.5 + (13.7 * beratBadan) + (5 * tinggi) - (6.8 * usia)
-    } else if (gender === "Female") {
+    } else if (gender === 'Female') {
         temp = 65.5 + (9.6 * beratBadan) + (1.8 * tinggi) - (4.7 * usia)
     }
     if (aktivitas === 'Tidak Pernah Berolahraga') {

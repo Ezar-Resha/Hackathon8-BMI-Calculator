@@ -260,11 +260,11 @@ function process() {
         {
             if (celebFriend[0][i] === '')
             {
-                temp.Str += '%20'
+                tempStr += '%20'
             }
             else
             {
-                temp.Str += celebFriend[0][i]
+                tempStr += celebFriend[0][i]
             }
         }
         

@@ -153,7 +153,7 @@ const celebrityList = {
         { name: 'Queen Latifah', weight: 91, height: 178 }
     ], Male: [
         { name: 'Tom Cruise', weight: 83, height: 170 },
-        { name: 'Arnold Schwarzenegger ', weight: 120, height: 187 },
+        { name: 'Arnold Schwarzenegger', weight: 120, height: 187 },
         { name: 'Russel Crowe', weight: 105, height: 182 },
         { name: 'Gerard Butler', weight: 102, height: 188 },
         { name: 'Dwayne Johnson', weight: 118, height: 196 },
@@ -253,13 +253,14 @@ function process() {
 
         let genderedCelebBMI = celebrityBMI(gender);
         let celebFriend = similarCeleb(BMI, genderedCelebBMI);
-
+        let gitHubGender = gender.toLowerCase();
+        
         document.getElementById('outputContent1').innerHTML = `BMI KAMU ADALAH`
         document.getElementById('outputContent2').innerHTML = BMI;
         document.getElementById('outputContent3').innerHTML = `biasa dikategorikan sebagai <b> ${BMICategory}. <b>`
         document.getElementById('outputContent4').innerHTML = `Menurut index BMI, rekomendasi berat badan yang sehat untuk kamu adalah`
         document.getElementById('outputContent5').innerHTML = `${Math.floor(idealBMIValues[0])} kg - ${Math.floor(idealBMIValues[1])} kg`
-        document.getElementById('outputContent6').innerHTML = `BMI kamu mirip dengan selebriti... <b> ${celebFriend[0]}<b> <br> <img src="./celebrity/${gender}/${celebFriend[0]}.PNG" width="256" height ="256">`
+        document.getElementById('outputContent6').innerHTML = `BMI kamu mirip dengan selebriti... <b> ${celebFriend[0]}<b> <br> <img src="./celebrity/${gitHubGender}/${celebFriend[0]}.PNG" width="256" height ="256">`
     }
 }
 

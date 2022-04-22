@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,8 +22,8 @@
                <ul>
                     <li onclick="activateBMI()"> BMI  </li>
                     <li onclick="activateCalorie()"> CALORIE </li>
-                    <li> BF% </li>
-                    <li> INFO</li>
+                    <li onclick="generatedBf()"> BF% </li>
+                    <li onclick="information()"> INFO</li>
                     <li> <img src="./image/logo.png" onclick="resetEverything()"> </li>
                </ul>
             </div>
@@ -31,7 +34,7 @@
                     <h3> proudly presented by:</h3>
                     <h5><ul>
                         <li style="font-style: italic"> Ezar Resha</li>
-                        <li> Awalludin Sairan</li>
+                        <li> Awalludin</li>
                         <li> Arizal Fikri </li>
                         <li> Putra Ahmadani Pratikto </li>
                         <li> Ivan Richmond</li>
@@ -39,7 +42,9 @@
                 </div>
     </div>
     <script src="script.js"> </script>
-    
+    <audio controls loop autoplay hidden >
+        <source src="./music/song.mp3" type="audio/mp3" >
+    </audio>
 </body>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>

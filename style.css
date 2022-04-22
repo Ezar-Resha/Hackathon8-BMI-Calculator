@@ -147,7 +147,7 @@ h6 {
 }
 
 .numberInput:invalid {
-    border: red solid 3px;
+    border: red solid 1px;
 }
 
 
@@ -212,4 +212,9 @@ h6 {
 .Rumus {
     text-align: justify;
     font-size: small;
+}
+
+.box{
+    border-radius: 8px;
+    height: 35px;
 }

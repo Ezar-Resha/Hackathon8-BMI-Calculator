@@ -255,12 +255,25 @@ function process() {
         let celebFriend = similarCeleb(BMI, genderedCelebBMI);
         let gitHubGender = gender.toLowerCase();
         
+        let tempStr ='';
+        for(let i = 0; i < celebFriend[0].length;i++)
+        {
+            if (celebFriend[0][i] === '')
+            {
+                temp.Str += '%20'
+            }
+            else
+            {
+                temp.Str += celebFriend[0][i]
+            }
+        }
+        
         document.getElementById('outputContent1').innerHTML = `BMI KAMU ADALAH`
         document.getElementById('outputContent2').innerHTML = BMI;
         document.getElementById('outputContent3').innerHTML = `biasa dikategorikan sebagai <b> ${BMICategory}. <b>`
         document.getElementById('outputContent4').innerHTML = `Menurut index BMI, rekomendasi berat badan yang sehat untuk kamu adalah`
         document.getElementById('outputContent5').innerHTML = `${Math.floor(idealBMIValues[0])} kg - ${Math.floor(idealBMIValues[1])} kg`
-        document.getElementById('outputContent6').innerHTML = `BMI kamu mirip dengan selebriti... <b> ${celebFriend[0]}<b> <br> <img src="./celebrity/${gitHubGender}/${celebFriend[0]}.PNG" width="256" height ="256">`
+        document.getElementById('outputContent6').innerHTML = `BMI kamu mirip dengan selebriti... <b> ${celebFriend[0]}<b> <br> <img src="./celebrity/${gitHubGender}/${tempStr}.png" width="256" height ="256">`
     }
 }
 
